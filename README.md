@@ -11,12 +11,12 @@ Este proyecto es una aplicación de comercio electrónico completa que incluye g
 ### Core
 
 - **[Next.js 15](https://nextjs.org/)** - React framework con App Router y Turbopack
-- **[React 19](https://react.dev/)** - Biblioteca UI
-- **[TypeScript](https://www.typescriptlang.org/)** - Tipado estático
+- **[React 19](https://react.dev/)**
+- **[TypeScript](https://www.typescriptlang.org/)**
 
 ### Estilos
 
-- **[Tailwind CSS 4](https://tailwindcss.com/)** - Framework CSS utility-first
+- **[Tailwind CSS 4](https://tailwindcss.com/)**
 
 ### Base de Datos & ORM
 
