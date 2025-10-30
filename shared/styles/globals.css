@@ -1,26 +1,195 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* ========================================
+     COLOR SYSTEM
+     ======================================== */
+
+  /* Dark shades */
+  --color-dark-900: #111111;
+  --color-dark-700: #757575;
+  --color-dark-500: #aaaaaa;
+
+  /* Light shades */
+  --color-light-100: #ffffff;
+  --color-light-200: #f5f5f5;
+  --color-light-300: #e5e5e5;
+  --color-light-400: #cccccc;
+
+  /* Supporting colors */
+  --color-green: #007d48;
+  --color-red: #d33918;
+  --color-orange: #d37918;
+
+  /* ========================================
+     TYPOGRAPHY SYSTEM - HELVETICA NEUE
+     ======================================== */
+
+  /* Font Families */
+  --font-family-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-family-gilroy: "Gilroy", "Helvetica Neue", sans-serif;
+
+  /* ========================================
+     HEADING STYLES
+     ======================================== */
+
+  /* H1 - text-7xl - ExtraBold (Gilroy) */
+  --font-size-7xl: 72px;
+  --line-height-7xl: 78px;
+  --font-weight-7xl: 800;
+
+  /* H2 - text-6xl - Bold */
+  --font-size-6xl: 56px;
+  --line-height-6xl: 60px;
+  --font-weight-6xl: 700;
+
+  /* ========================================
+     TEXT SIZES
+     ======================================== */
+
+  /* text-2xl */
+  --font-size-2xl: 24px;
+  --line-height-2xl: 30px;
+
+  /* text-xl */
+  --font-size-xl: 20px;
+  --line-height-xl: 28px;
+
+  /* text-base (16px) */
+  --font-size-base: 16px;
+  --line-height-base: 24px;
+
+  /* text-sm (14px) */
+  --font-size-sm: 14px;
+  --line-height-sm: 20px;
+
+  /* text-xs (12px) */
+  --font-size-xs: 12px;
+  --line-height-xs: 18px;
+
+  /* ========================================
+     FONT WEIGHTS
+     ======================================== */
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  /* ========================================
+     MAX WIDTH SIZES
+     ======================================== */
+
+  --max-width-8xl: 1600px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* ========================================
+   TYPOGRAPHY UTILITY CLASSES
+   ======================================== */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer utilities {
+  /* Headings */
+  .text-h1 {
+    font-family: var(--font-family-gilroy);
+    font-size: var(--font-size-7xl);
+    line-height: var(--line-height-7xl);
+    font-weight: var(--font-weight-extrabold);
+    text-transform: uppercase;
+  }
+
+  .text-h2 {
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-6xl);
+    line-height: var(--line-height-6xl);
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+  }
+
+  /* Body text variations */
+  .text-2xl-regular {
+    font-size: var(--font-size-2xl);
+    line-height: var(--line-height-2xl);
+    font-weight: var(--font-weight-regular);
+  }
+
+  .text-2xl-medium {
+    font-size: var(--font-size-2xl);
+    line-height: var(--line-height-2xl);
+    font-weight: var(--font-weight-medium);
+  }
+
+  .text-xl-medium {
+    font-size: var(--font-size-xl);
+    line-height: var(--line-height-xl);
+    font-weight: var(--font-weight-medium);
+  }
+
+  .text-base-regular {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    font-weight: var(--font-weight-regular);
+  }
+
+  .text-base-medium {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    font-weight: var(--font-weight-medium);
+  }
+
+  .text-sm-medium {
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-sm);
+    font-weight: var(--font-weight-medium);
+  }
+
+  .text-sm-regular {
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-sm);
+    font-weight: var(--font-weight-regular);
+  }
+
+  .text-xs-medium {
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-xs);
+    font-weight: var(--font-weight-medium);
+  }
+
+  .text-xs-regular {
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-xs);
+    font-weight: var(--font-weight-regular);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ========================================
+   BASE STYLES
+   ======================================== */
+
+@layer base {
+  body {
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    font-weight: var(--font-weight-regular);
+  }
+
+  h1 {
+    font-family: var(--font-family-gilroy);
+    font-size: var(--font-size-7xl);
+    line-height: var(--line-height-7xl);
+    font-weight: var(--font-weight-extrabold);
+  }
+
+  h2 {
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-6xl);
+    line-height: var(--line-height-6xl);
+    font-weight: var(--font-weight-bold);
+  }
+
+  h3 {
+    font-size: var(--font-size-2xl);
+    line-height: var(--line-height-2xl);
+    font-weight: var(--font-weight-medium);
+  }
 }
